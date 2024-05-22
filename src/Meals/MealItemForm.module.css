@@ -1,0 +1,15 @@
+.addbtn {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  align-items: flex-end;
+}
+.btncls {
+  background-color: brown;
+  border-radius: 10px;
+  padding: 8px;
+  border: 1px solid brown;
+  color: aliceblue;
+  font-size: 15px;
+}

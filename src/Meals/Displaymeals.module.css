@@ -1,7 +1,10 @@
+.main {
+  border-bottom: 1px solid gray;
+  display: flex;
+  justify-content: space-between;
+}
 .mealItem {
-  background-color: aliceblue;
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid gray;
   padding: 10px;
 }

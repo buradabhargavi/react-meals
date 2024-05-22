@@ -1,0 +1,8 @@
+.input {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+input {
+  width: 40px;
+}

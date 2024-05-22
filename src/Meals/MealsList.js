@@ -1,6 +1,7 @@
 import React from "react";
 import Displaymeals from "./Displaymeals";
 import classes from "./MealList.module.css";
+import Card from "../UI/Card";
 const DUMMY_MEALS = [
   {
     id: "m1",
@@ -31,9 +32,13 @@ const DUMMY_MEALS = [
 const MealsList = () => {
   return (
     <div className={classes.mealList}>
-      {DUMMY_MEALS.map((item) => {
-        return <Displaymeals item={item} />;
-      })}
+      <Card>
+        <ul>
+          {DUMMY_MEALS.map((item) => {
+            return <Displaymeals key={item.id} item={item} />;
+          })}
+        </ul>
+      </Card>
     </div>
   );
 };
