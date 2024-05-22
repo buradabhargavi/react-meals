@@ -1,0 +1,7 @@
+.mealItem {
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid gray;
+  padding: 10px;
+}
