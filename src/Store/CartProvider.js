@@ -39,11 +39,16 @@ const CartProvider = (props) => {
         return prevItems;
       }
 
-      const updatedItems = prevItems.filter((item) => item.id !== id);
-      setTotalAmount(
-        (prevTotalAmount) =>
-          prevTotalAmount - existingItem.price * existingItem.amount
-      );
+      let updatedItems;
+      if (existingItem.amount === 1) {
+        updatedItems = prevItems.filter((item) => item.id !== id);
+      } else {
+        updatedItems = prevItems.map((item) =>
+          item.id === id ? { ...item, amount: item.amount - 1 } : item
+        );
+      }
+
+      setTotalAmount((prevTotalAmount) => prevTotalAmount - existingItem.price);
       return updatedItems;
     });
   };

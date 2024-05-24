@@ -9,15 +9,21 @@ const Cart = (props) => {
   const cartItems = cartCtx.items.map((item) => (
     <li key={item.id}>
       <div>
-        <h2>
-          {item.name}({item.amount})
-        </h2>
+        <h2>{item.name}</h2>
         <div className={classes.summary}>
           <span className={classes.price}>${item.price.toFixed(2)}</span>
-          <span className={classes.price}>
-            ${item.price.toFixed(2) * item.amount}
-          </span>
+          <input
+            type="number"
+            value={item.amount}
+            onChange={() => cartCtx.removeItem(item.id)}
+          ></input>
         </div>
+      </div>
+      <div className={classes.actions}>
+        <button onClick={() => cartCtx.removeItem(item.id)}>−</button>
+        <button onClick={() => cartCtx.addItem({ ...item, amount: 1 })}>
+          +
+        </button>
       </div>
     </li>
   ));
