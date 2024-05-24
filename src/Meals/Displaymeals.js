@@ -4,6 +4,7 @@ import MealItemForm from "./MealItemForm";
 
 const Displaymeals = (props) => {
   const price = `$${props.item.price.toFixed(2)}`;
+
   return (
     <div className={classes.main}>
       <div className={classes.mealItem}>
@@ -11,8 +12,11 @@ const Displaymeals = (props) => {
         <i>{props.item.description}</i>
         <b style={{ color: "red" }}>{price}</b>
       </div>
-
-      <MealItemForm />
+      <MealItemForm
+        id={props.item.id}
+        name={props.item.name}
+        price={props.item.price}
+      />
     </div>
   );
 };

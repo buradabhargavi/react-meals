@@ -3,6 +3,7 @@ import MealsList from "./Meals/MealsList";
 import Summary from "./Meals/Summary";
 import Cart from "./Cart/Cart";
 import { useState } from "react";
+import CartProvider from "./Store/CartProvider";
 function App() {
   const [cartshown, setCartshown] = useState(false);
 
@@ -15,12 +16,12 @@ function App() {
   };
 
   return (
-    <div>
+    <CartProvider>
       {cartshown && <Cart onClose={handleClose} />}
       <Header onShow={handleShow} />
       <Summary />
       <MealsList />
-    </div>
+    </CartProvider>
   );
 }
 
